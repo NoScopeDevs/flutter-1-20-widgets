@@ -14,7 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter 1.20 Widgets')),
+      appBar: AppBar(
+        title: Text('Flutter 1.20 Widgets'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info),
+            onPressed: () => showAboutDialog(
+              context: context,
+              applicationIcon: FlutterLogo(),
+              applicationName: 'Más widgets',
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         children: [
           _ListItem(title: 'Drag and drop', child: DragExample()),

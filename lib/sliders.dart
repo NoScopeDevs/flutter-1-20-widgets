@@ -12,7 +12,7 @@ class _SliderExampleState extends State<SliderExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text(widget.toString())),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -47,9 +47,7 @@ class _SliderExampleState extends State<SliderExample> {
                 _rangeValues.start.round().toString(),
                 _rangeValues.end.round().toString(),
               ),
-              onChanged: (values) {
-                setState(() => _rangeValues = values);
-              },
+              onChanged: (values) => setState(() => _rangeValues = values),
             ),
           ),
         ],

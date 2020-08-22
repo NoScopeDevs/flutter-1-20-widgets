@@ -38,7 +38,7 @@ class _DragExampleState extends State<DragExample> {
                 decoration: _decoration,
                 width: _feedbackSize.width,
                 height: _feedbackSize.height,
-                child: Image.asset('assets/images/ball.png'),
+                child: Image.asset('assets/images/marcos.png'),
               ),
             ),
             child: Container(
@@ -48,7 +48,7 @@ class _DragExampleState extends State<DragExample> {
                   SizedBox(height: 20),
                   // Text('Trash Me'),
                   Image.asset(
-                    'assets/images/ball.png',
+                    'assets/images/marcos.png',
                     width: _feedbackSize.width,
                     height: _feedbackSize.height,
                   ),
@@ -66,17 +66,12 @@ class _DragExampleState extends State<DragExample> {
             'assets/images/trash.png',
             color: candidateData.isNotEmpty ? Color(0x2200FF00) : null,
           ),
-          // Container(
-          //   decoration: _decoration.copyWith(
-          //     color: candidateData.isNotEmpty ? Color(0x2200FF00) : Color(0x00000000),
-          //   ),
-          // ),
-          onAccept: (data) {
+          onAccept: (data) async {
             setState(() {
               list.removeLast();
             });
             if (list.isEmpty) {
-              showDialog(
+              await showDialog(
                 context: context,
                 builder: (_) {
                   return AlertDialog(
@@ -84,6 +79,7 @@ class _DragExampleState extends State<DragExample> {
                   );
                 },
               );
+              Navigator.of(context).pop();
             }
           },
         ),
@@ -91,26 +87,25 @@ class _DragExampleState extends State<DragExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
-        child: Column(
-          children: [
-            Text(
-              'CLEAN IT!',
-              style: TextStyle(fontSize: 40.0),
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.toString())),
+      body: Column(
+        children: [
+          Text(
+            'CLEAN IT!',
+            style: TextStyle(fontSize: 40.0),
+          ),
+          Expanded(
+            child: Row(
+              children: list
+                  .map(
+                    (index) => _buildSourceRowChild(index),
+                  )
+                  .toList(),
             ),
-            Expanded(
-              child: Row(
-                children: list
-                    .map(
-                      (index) => _buildSourceRowChild(index),
-                    )
-                    .toList(),
-              ),
-            ),
-            Expanded(flex: 2, child: _buildDragTargetChild())
-          ],
-        ),
+          ),
+          Expanded(flex: 2, child: _buildDragTargetChild())
+        ],
       ),
     );
   }

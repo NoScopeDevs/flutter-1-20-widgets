@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'sliders.dart';
 import 'pickers.dart';
 import 'drag_n_drop.dart';
+import 'interactive_view.dart';
 
 void main() {
   runApp(
@@ -30,8 +31,9 @@ class MyApp extends StatelessWidget {
       body: ListView(
         children: [
           _ListItem(title: 'Drag and drop', child: DragExample()),
+          _ListItem(title: 'Interactive View', child: InteractiveExample()),
           _ListItem(title: 'Sliders', child: SliderExample()),
-          _ListItem(title: 'Pickers', child: PickersSample()),
+          _ListItem(title: 'Pickers', child: PickersExample()),
         ],
       ),
     );

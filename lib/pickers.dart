@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PickersSample extends StatefulWidget {
+class PickersExample extends StatefulWidget {
   @override
-  _PickersSampleState createState() => _PickersSampleState();
+  _PickersExampleState createState() => _PickersExampleState();
 }
 
-class _PickersSampleState extends State<PickersSample> {
+class _PickersExampleState extends State<PickersExample> {
   DateTime _dateTime = DateTime.now();
   TimeOfDay _timeOfDay = TimeOfDay.now();
 

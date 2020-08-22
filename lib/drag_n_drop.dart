@@ -97,9 +97,7 @@ class _DragExampleState extends State<DragExample> {
           children: [
             Text(
               'CLEAN IT!',
-              style: TextStyle(
-                fontSize: 40.0,
-              ),
+              style: TextStyle(fontSize: 40.0),
             ),
             Expanded(
               child: Row(
@@ -110,10 +108,7 @@ class _DragExampleState extends State<DragExample> {
                     .toList(),
               ),
             ),
-            Expanded(
-              flex: 2,
-              child: _buildDragTargetChild(),
-            )
+            Expanded(flex: 2, child: _buildDragTargetChild())
           ],
         ),
       ),

@@ -56,6 +56,9 @@ class _PickersExampleState extends State<PickersExample> {
               _timeRange.toString(),
               style: Theme.of(context).textTheme.headline5,
             ),
+
+            // * web sample: https://flutter-time-picker.firebaseapp.com
+
             MaterialButton(
               child: Text('Selecciona una hora'),
               onPressed: () async {

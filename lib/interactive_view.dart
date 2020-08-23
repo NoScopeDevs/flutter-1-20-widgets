@@ -86,10 +86,18 @@ class _InteractiveItemState extends State<InteractiveItem> {
           transformationController: controller,
           minScale: 0.1,
           maxScale: 1.6,
+
           // boundaryMargin: EdgeInsets.all(20.0),
+          // panEnabled: false,
+          scaleEnabled: true,
+          // onInteractionStart: (_) => print('START'),
+          // onInteractionUpdate: (_) => print('UPDATE'),
+
           onInteractionEnd: (details) {
+            print('END');
             setState(() {
-              controller.toScene(Offset(0, 0));
+              // print(controller.value);
+              // controller.toScene(Offset(0, 0));
 
               controller.value = Matrix4.identity();
             });

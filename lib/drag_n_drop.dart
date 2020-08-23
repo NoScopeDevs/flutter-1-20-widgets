@@ -25,7 +25,7 @@ class _DragExampleState extends State<DragExample> {
         child: Padding(
           padding: EdgeInsets.all(_padding),
           child: Draggable<int>(
-            childWhenDragging: SizedBox(),
+            childWhenDragging: SizedBox.shrink(),
             data: index,
             dragAnchor: DragAnchor.pointer,
             //Widget que se muestra cuando el drag esta en proceso
@@ -46,7 +46,7 @@ class _DragExampleState extends State<DragExample> {
               child: Column(
                 children: [
                   SizedBox(height: 20),
-                  // Text('Trash Me'),
+                  Text('Trash Me'),
                   Image.asset(
                     'assets/images/marcos.png',
                     width: _feedbackSize.width,

@@ -6,10 +6,8 @@ class InteractiveExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Interactive Viewer')),
       backgroundColor: Colors.grey,
-      appBar: AppBar(
-        title: Text('Interactive Viewer'),
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -77,6 +75,7 @@ class InteractiveItem extends StatefulWidget {
 
 class _InteractiveItemState extends State<InteractiveItem> {
   final controller = TransformationController();
+
   @override
   Widget build(BuildContext context) {
     return Expanded(

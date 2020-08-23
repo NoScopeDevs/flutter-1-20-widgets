@@ -87,31 +87,25 @@ class _DragExampleState extends State<DragExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SafeArea(
-        child: Column(
-          children: [
-            Text(
-              'CLEAN IT!',
-              style: TextStyle(
-                fontSize: 40.0,
-              ),
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.toString())),
+      body: Column(
+        children: [
+          Text(
+            'CLEAN IT!',
+            style: TextStyle(fontSize: 40.0),
+          ),
+          Expanded(
+            child: Row(
+              children: list
+                  .map(
+                    (index) => _buildSourceRowChild(index),
+                  )
+                  .toList(),
             ),
-            Expanded(
-              child: Row(
-                children: list
-                    .map(
-                      (index) => _buildSourceRowChild(index),
-                    )
-                    .toList(),
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: _buildDragTargetChild(),
-            )
-          ],
-        ),
+          ),
+          Expanded(flex: 2, child: _buildDragTargetChild())
+        ],
       ),
     );
   }
